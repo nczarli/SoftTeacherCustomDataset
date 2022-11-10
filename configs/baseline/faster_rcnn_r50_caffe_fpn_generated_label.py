@@ -12,8 +12,8 @@ model = dict(
 dataset_type = 'CocoDataset'
 classes = ('pitted', 'not_pitted', 'try_again')
 data = dict(
-    samples_per_gpu=2,
-    workers_per_gpu=2,
+    samples_per_gpu=4,
+    workers_per_gpu=4,
     train=dict(
       type = dataset_type,
       classes=classes,
@@ -38,6 +38,8 @@ data = dict(
 optimizer = dict(lr=0.02)
 lr_config = dict(
   step=[120000 * 4, 160000 * 4],
-  interval=1,
+)
+log_config=dict(
+  interval=1
 )
 runner = dict(_delete_=True, type="IterBasedRunner", max_iters=200)
