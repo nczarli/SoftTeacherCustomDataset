@@ -35,7 +35,7 @@ data = dict(
 )
 
 
-optimizer = dict(lr=0.02)
+optimizer = dict(lr=0.1)
 lr_config = dict(
   step=[120000 * 4, 160000 * 4],
 )
