@@ -36,5 +36,8 @@ data = dict(
 
 
 optimizer = dict(lr=0.02)
-lr_config = dict(step=[120000 * 4, 160000 * 4])
+lr_config = dict(
+  step=[120000 * 4, 160000 * 4],
+  interval=1,
+)
 runner = dict(_delete_=True, type="IterBasedRunner", max_iters=200)
