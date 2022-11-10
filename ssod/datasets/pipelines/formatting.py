@@ -1,6 +1,6 @@
 import numpy as np
 from mmdet.datasets import PIPELINES
-from mmdet.datasets.pipelines.formating import Collect
+from mmdet.datasets.pipelines.formatting import Collect
 
 from ssod.core import TrimapMasks
 
