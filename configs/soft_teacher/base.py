@@ -38,14 +38,14 @@ train_pipeline = [
                     dict(type=k)
                     for k in [
                         "Identity",
-                        "AutoContrast",
-                        "RandEqualize",
-                        "RandSolarize",
-                        "RandColor",
-                        "RandContrast",
-                        "RandBrightness",
-                        "RandSharpness",
-                        "RandPosterize",
+                        #"AutoContrast",
+                        #"RandEqualize",
+                        #"RandSolarize",
+                        #"RandColor",
+                        #"RandContrast",
+                        #"RandBrightness",
+                        #"RandSharpness",
+                        #"RandPosterize",
                     ]
                 ],
             ),

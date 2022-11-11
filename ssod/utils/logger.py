@@ -155,7 +155,7 @@ def log_image_with_boxes(
         raise TypeError("backend must be file or wandb")
 
 
-def log_every_n(msg: str, n: int = 50, level: int = logging.DEBUG, backend="auto"):
+def log_every_n(msg: str, n: int = 1, level: int = logging.DEBUG, backend="auto"):
     """
     Args:
         msg (Any):

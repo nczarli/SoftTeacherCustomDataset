@@ -6,8 +6,8 @@ num_classes = 3
 dataset_type = 'CocoDataset'
 classes = ('pitted', 'not_pitted', 'try_again')
 data = dict(
-    samples_per_gpu=4,
-    workers_per_gpu=4,
+    samples_per_gpu=6,
+    workers_per_gpu=6,
     train=dict(
         sup=dict(
             type = dataset_type,
@@ -64,5 +64,5 @@ lr_config = dict(
 log_config=dict(
   interval=1
 )
-runner = dict(_delete_=True, type="IterBasedRunner", max_iters=200)
+runner = dict(_delete_=True, type="IterBasedRunner", max_iters=300)
 
