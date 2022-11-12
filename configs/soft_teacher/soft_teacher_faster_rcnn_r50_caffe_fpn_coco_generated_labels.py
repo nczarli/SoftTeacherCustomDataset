@@ -65,5 +65,5 @@ lr_config = dict(
 log_config=dict(
   interval=1
 )
-runner = dict(_delete_=True, type="IterBasedRunner", max_iters=200)
+runner = dict(_delete_=True, type="IterBasedRunner", max_iters=400)
 
