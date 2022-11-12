@@ -25,12 +25,12 @@ train_pipeline = [
     dict(
         type="Sequential",
         transforms=[
-            #dict(
-            #    type="RandResize",
-            #    img_scale=[(1333, 400), (1333, 1200)],
-            #    multiscale_mode="range",
-            #    keep_ratio=True,
-            #),
+            dict(
+                type="RandResize",
+                img_scale=[(1333, 400), (1333, 1200)],
+                multiscale_mode="range",
+                keep_ratio=True,
+            ),
             dict(type="RandFlip", flip_ratio=0.5),
             dict(
                 type="OneOf",
@@ -75,12 +75,12 @@ strong_pipeline = [
     dict(
         type="Sequential",
         transforms=[
-            #dict(
-            #    type="RandResize",
-            #    img_scale=[(1333, 400), (1333, 1200)],
-            #    multiscale_mode="range",
-            #    keep_ratio=True,
-            #),
+            dict(
+                type="RandResize",
+                img_scale=[(1333, 400), (1333, 1200)],
+                multiscale_mode="range",
+                keep_ratio=True,
+            ),
             dict(type="RandFlip", flip_ratio=0.5),
             dict(
                 type="ShuffledSequential",
@@ -148,12 +148,12 @@ weak_pipeline = [
     dict(
         type="Sequential",
         transforms=[
-            #dict(
-            #    type="RandResize",
-            #    img_scale=[(1333, 400), (1333, 1200)],
-            #    multiscale_mode="range",
-            #    keep_ratio=True,
-            #),
+            dict(
+                type="RandResize",
+                img_scale=[(1333, 400), (1333, 1200)],
+                multiscale_mode="range",
+                keep_ratio=True,
+            ),
             dict(type="RandFlip", flip_ratio=0.5),
         ],
         record=True,
@@ -258,9 +258,9 @@ custom_hooks = [
     dict(type="WeightSummary"),
     dict(type="MeanTeacher", momentum=0.999, interval=1, warm_up=0),
 ]
-evaluation = dict(type="SubModulesDistEvalHook", interval=4000)
-optimizer = dict(type="SGD", lr=0.01, momentum=0.9, weight_decay=0.0001)
-lr_config = dict(step=[120000, 160000])
+evaluation = dict(type="SubModulesDistEvalHook", interval=10)
+optimizer = dict(type="SGD", lr=0.02, momentum=0.9, weight_decay=0.0001)
+lr_config = dict(step=[120000, 160000], warmup_iters=10)
 runner = dict(_delete_=True, type="IterBasedRunner", max_iters=180000)
 checkpoint_config = dict(by_epoch=False, interval=4000, max_keep_ckpts=20)
 
