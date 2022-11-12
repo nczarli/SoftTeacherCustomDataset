@@ -172,7 +172,7 @@ class SoftTeacher(MultiSteamDetector):
                 pseudo_bboxes[0][:, :4],
                 bbox_tag="rpn_pseudo_label",
                 scores=pseudo_bboxes[0][:, 4],
-                interval=500,
+                interval=10,
                 img_norm_cfg=student_info["img_metas"][0]["img_norm_cfg"],
             )
             return losses, proposal_list
@@ -252,7 +252,7 @@ class SoftTeacher(MultiSteamDetector):
                 bbox_tag="pseudo_label",
                 labels=gt_labels[0],
                 class_names=self.CLASSES,
-                interval=500,
+                interval=10,
                 img_norm_cfg=student_info["img_metas"][0]["img_norm_cfg"],
             )
         return loss
@@ -288,7 +288,7 @@ class SoftTeacher(MultiSteamDetector):
                 bbox_tag="pseudo_label",
                 labels=gt_labels[0],
                 class_names=self.CLASSES,
-                interval=500,
+                interval=10,
                 img_norm_cfg=student_info["img_metas"][0]["img_norm_cfg"],
             )
         return {"loss_bbox": loss_bbox}
