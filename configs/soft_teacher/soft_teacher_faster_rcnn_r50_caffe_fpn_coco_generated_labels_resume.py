@@ -58,6 +58,8 @@ semi_wrapper = dict(
     )
 )
 
+resume_from = 'resume_from/iter_400.pth'
+
 optimizer = dict(lr=0.015)
 lr_config = dict(
   step=[120000 * 4, 160000 * 4],
