@@ -12,7 +12,7 @@ class PseudoCocoDataset(CocoDataset):
         ann_file,
         pseudo_ann_file,
         pipeline,
-        confidence_threshold=0.9,
+        confidence_threshold=0.5,
         classes=None,
         data_root=None,
         img_prefix="",
