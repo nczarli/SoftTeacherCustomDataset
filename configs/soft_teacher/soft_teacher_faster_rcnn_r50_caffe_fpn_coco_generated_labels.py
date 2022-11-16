@@ -58,12 +58,12 @@ semi_wrapper = dict(
     )
 )
 
-optimizer = dict(lr=0.015)
+optimizer = dict(lr=0.01)
 lr_config = dict(
   step=[120000 * 4, 160000 * 4],
 )
 log_config=dict(
   interval=1
 )
-runner = dict(_delete_=True, type="IterBasedRunner", max_iters=800)
+runner = dict(_delete_=True, type="IterBasedRunner", max_iters=400)
 

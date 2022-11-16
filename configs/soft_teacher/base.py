@@ -228,10 +228,10 @@ data = dict(
     sampler=dict(
         train=dict(
             type="SemiBalanceSampler",
-            sample_ratio=[1, 4],
+            sample_ratio=[1, 1],
             by_prob=True,
             # at_least_one=True,
-            epoch_length=7330,
+            epoch_length=100,
         )
     ),
 )
